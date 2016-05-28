@@ -1,10 +1,10 @@
 {
-    "name": "react-send-to-messenger",
+    "name": "react-messenger-plugin",
     "version": "0.0.1",
-    "description": "React wrapper for the Facebook Messenger Send-to-Messenger Plugin",
-    "main": "lib/ReactSendToMessenger.js",
+    "description": "React wrapper for the Facebook Messenger Plugin",
+    "main": "lib/MessengerPluginWrapper.js",
     "scripts": {
-        "babel": "babel -d lib/ src/" 
+        "babel": "rm -rf lib/ && babel -d lib/ src/"
     },
     "repository": {
         "type": "git",
