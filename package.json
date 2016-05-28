@@ -1,0 +1,25 @@
+{
+  "name": "react-send-to-messenger",
+  "version": "0.0.1",
+  "description": "React wrapper for the Facebook Messenger Send-to-Messenger Plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemieux/react-send-to-messenger.git"
+  },
+  "keywords": [
+    "react",
+    "facebook",
+    "messenger",
+    "send-to-messenger"
+  ],
+  "author": "Marc-Antoine Lemieux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lemieux/react-send-to-messenger/issues"
+  },
+  "homepage": "https://github.com/lemieux/react-send-to-messenger#readme"
+}
