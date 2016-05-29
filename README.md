@@ -59,3 +59,6 @@ render(
     document.body
 );
 ```
+---
+
+*Inspired by [react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha)*
