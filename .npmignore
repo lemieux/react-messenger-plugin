@@ -2,3 +2,5 @@
 .esformatter
 .eslintrc
 .gitignore
+src/
+README.md
