@@ -5,6 +5,7 @@ export default class MessengerPlugin extends Component {
     static propTypes = {
         appId: PropTypes.string.isRequired,
         pageId: PropTypes.string.isRequired,
+        FB: PropTypes.object,
         passthroughParams: (props, propName, componentName) => {
             const stringError = PropTypes.string(props, propName, componentName);
 
@@ -27,22 +28,32 @@ export default class MessengerPlugin extends Component {
         type: 'send-to'
     }
 
-    componentDidMount() {
+    initFacebookSDK() {
         const {FB, appId} = this.props;
 
-        FB.init({
-            appId,
-            xfbml: true,
-            version: 'v2.6'
-        });
+        if (FB) {
+            FB.init({
+                appId,
+                xfbml: true,
+                version: 'v2.6'
+            });
+        }
     }
+
+    componentDidMount() {
+        this.initFacebookSDK();
+    }
+
+    componentDidUpdate() {
+        this.initFacebookSDK();
+    }
+
     render() {
         const {type, appId, passthroughParams, color, size, pageId} = this.props;
-        return <div className={type === 'send-to' ? 'fb-send-to-messenger' : 'fb-messengermessageus'}
-            messenger_app_id={appId}
-            page_id={pageId}
-            data-ref={passthroughParams}
-            color={color}
-            size={size}></div>;
+        // use dangerouslySetInnerHTML because React will ignore custom attributes
+        const markup = {
+            __html: `<div class=${type === 'send-to' ? 'fb-send-to-messenger' : 'fb-messengermessageus'} messenger_app_id=${appId} page_id=${pageId} data-ref=${passthroughParams} color=${color} size=${size}></div>`
+        };
+        return <div dangerouslySetInnerHTML={markup}></div>;
     }
 }
