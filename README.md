@@ -35,6 +35,7 @@ Expect a delay before the button appears. This is mainly caused by the time requ
 | Name | Type | Required? | Default | Description |
 | --- | --- | ---- | --- | --- | --- |
 | appId | string | yes | - | Your Facebook app id |
+| pageId | string | yes | - | Your Facebook page id |
 | passthroughParams | string | no | - | Equivalent of `data-ref`. Used to pass state with the authentication. See [documentation](https://developers.facebook.com/docs/messenger-platform/webhook-reference#auth). |
 | type | string | no | `send-to` | Type of plugin. Must be either `send-to` (Send-to-Messenger plugin) or `message-us` (Message-Us plugin). |
 | color | string | no | `blue` | Color of the button. Must be either `blue` or `white`. |
