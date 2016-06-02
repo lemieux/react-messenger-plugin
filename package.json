@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/lemieux/react-send-to-messenger#readme",
   "dependencies": {
-    "react-async-script": "0.5.1"
+    "react-async-script": "0.6.0"
   },
   "devDependencies": {
     "babel-cli": "6.9.0",
@@ -52,8 +52,8 @@
     "release-script": "1.0.2"
   },
   "peerDependencies": {
-    "babel-runtime": "6.9.0",
-    "react": "0.14.7",
-    "react-dom": "0.14.7"
+    "babel-runtime": ">=6.9.0",
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
   }
 }
