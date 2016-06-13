@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lemieux/react-send-to-messenger.git"
+    "url": "git+https://github.com/lemieux/react-messenger-plugin.git"
   },
   "keywords": [
     "react",
@@ -22,9 +22,9 @@
   "author": "Marc-Antoine Lemieux",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lemieux/react-send-to-messenger/issues"
+    "url": "https://github.com/lemieux/react-messenger-plugin/issues"
   },
-  "homepage": "https://github.com/lemieux/react-send-to-messenger#readme",
+  "homepage": "https://github.com/lemieux/react-messenger-plugin#readme",
   "dependencies": {
     "react-async-script": "0.6.0"
   },
