@@ -6,15 +6,17 @@ export default class MessengerPlugin extends Component {
         appId: PropTypes.string.isRequired,
         pageId: PropTypes.string.isRequired,
         FB: PropTypes.object,
-        passthroughParams: (props, propName, componentName) => {
-            const stringError = PropTypes.string(props, propName, componentName);
+        passthroughParams: (props, propName) => {
+            if (propName in props) {
+                const value = props[propName];
 
-            if (stringError) {
-                return stringError;
-            }
+                if (typeof value !== 'string') {
+                    return new Error(`Invalid prop ${propName}: must be a string.`);
+                }
 
-            if (propName in props && props[propName].length > 50) {
-                return new Error(`Invalid prop ${propName}: must be smaller than 50 characters.`);
+                if (props[propName].length > 50) {
+                    return new Error(`Invalid prop ${propName}: must be smaller than 50 characters.`);
+                }
             }
         },
         type: PropTypes.oneOf(['send-to', 'message-us']),
