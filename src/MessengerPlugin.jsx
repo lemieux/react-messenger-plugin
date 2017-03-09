@@ -14,8 +14,8 @@ export default class MessengerPlugin extends Component {
                     return new Error(`Invalid prop ${propName}: must be a string.`);
                 }
 
-                if (props[propName].length > 50) {
-                    return new Error(`Invalid prop ${propName}: must be smaller than 50 characters.`);
+                if (props[propName].length > 250) {
+                    return new Error(`Invalid prop ${propName}: must be smaller than 250 characters.`);
                 }
             }
         },
