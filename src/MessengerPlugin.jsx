@@ -21,7 +21,10 @@ export default class MessengerPlugin extends Component {
         },
         type: PropTypes.oneOf(['send-to', 'message-us']),
         color: PropTypes.oneOf(['blue', 'white']),
-        size: PropTypes.oneOf(['standard', 'large', 'xlarge'])
+        size: PropTypes.oneOf(['standard', 'large', 'xlarge']),
+        onRender: PropTypes.func,
+        onClick: PropTypes.func,
+        onNotYou: PropTypes.func,
     };
 
     static defaultProps = {
@@ -31,7 +34,7 @@ export default class MessengerPlugin extends Component {
     }
 
     initFacebookSDK() {
-        const {FB, appId} = this.props;
+        const {FB, appId, onRender, onClick, onNotYou} = this.props;
 
         if (FB) {
             FB.init({
@@ -39,6 +42,17 @@ export default class MessengerPlugin extends Component {
                 xfbml: true,
                 version: 'v2.6'
             });
+
+            FB.Event.subscribe('send_to_messenger', function(e) {
+              if(onRender && e.event === "rendered") {
+                onRender(e);
+              }else if(onClick && e.event === "clicked") {
+                onClick(e);
+              }else if(onNotYou && e.event === "not_you") {
+                onNotYou(e);
+              }
+            });
+
         }
     }
 
