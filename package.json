@@ -47,6 +47,7 @@
     "esformatter-quotes": "1.0.3",
     "eslint": "2.3.0",
     "eslint-plugin-react": "4.2.3",
+    "prop-types": "15.5.10",
     "react": "0.14.7",
     "react-dom": "0.14.7",
     "release-script": "1.0.2"
