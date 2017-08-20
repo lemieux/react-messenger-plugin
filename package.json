@@ -2,7 +2,7 @@
   "name": "react-messenger-plugin",
   "version": "1.0.3",
   "description": "React wrapper for the Facebook Messenger Plugin",
-  "main": "src/MessengerPluginWrapper.js",
+  "main": "lib/MessengerPluginWrapper.js",
   "scripts": {
     "build": "rm -rf lib/ && babel -d lib/ src/",
     "patch": "release patch",
