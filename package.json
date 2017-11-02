@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/lemieux/react-messenger-plugin#readme",
   "dependencies": {
-    "react-async-script": "0.6.0"
+    "react-async-script": "0.9.1"
   },
   "devDependencies": {
     "babel-cli": "6.9.0",
