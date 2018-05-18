@@ -6,6 +6,7 @@ export default class MessengerPlugin extends Component {
     static propTypes = {
         appId: PropTypes.string.isRequired,
         pageId: PropTypes.string.isRequired,
+        version: PropTypes.string,
         FB: PropTypes.object,
         passthroughParams: (props, propName) => {
             if (propName in props) {
@@ -28,17 +29,18 @@ export default class MessengerPlugin extends Component {
     static defaultProps = {
         color: 'blue',
         size: 'standard',
-        type: 'send-to'
+        type: 'send-to',
+        version: 'v2.6'
     }
 
     initFacebookSDK() {
-        const {FB, appId} = this.props;
+        const {FB, appId, version} = this.props;
 
         if (FB) {
             FB.init({
                 appId,
-                xfbml: true,
-                version: 'v2.6'
+                version,
+                xfbml: true
             });
         }
     }
